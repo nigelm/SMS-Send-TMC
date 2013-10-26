@@ -14,3 +14,4 @@ inc
 META.*
 *.bak
 .build
+basic_test.pl
