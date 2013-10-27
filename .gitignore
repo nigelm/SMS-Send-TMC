@@ -15,3 +15,6 @@ META.*
 *.bak
 .build
 basic_test.pl
+.tidyall.d
+.DS_Store
+perltidy.LOG
