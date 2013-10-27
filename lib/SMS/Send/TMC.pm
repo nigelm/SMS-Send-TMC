@@ -62,9 +62,9 @@ L<http://www.tmcsms.com/developers/>
 
 =head2 new
 
-Constructor, takes argument pairs passed by SMS::Send, returns an SMS::Send::TMC
-object.  See usage synopsis for example, and see SMS::Send documentation for
-further info on using SMS::Send drivers.
+Constructor, takes argument pairs passed by SMS::Send, returns an
+SMS::Send::TMC object.  See usage synopsis for example, and see SMS::Send
+documentation for further info on using SMS::Send drivers.
 
 Additional arguments that may be passed include:-
 
@@ -72,7 +72,8 @@ Additional arguments that may be passed include:-
 
 =item _endpoint
 
-The HTTP API endpoint.  Defaults to C<https://www.tmcsms.co.uk/api/SendService.aspx>
+The HTTP API endpoint.  Defaults to
+C<https://www.tmcsms.co.uk/api/SendService.aspx>
 
 =item _timeout
 
@@ -92,17 +93,20 @@ Defaults to C<Message>.
 
 The source identifier or number attached to the message.  This has a number of
 possible values - C<Mobile>, C<CompanyName>, C<NickName>, C<Signature> or
-C<InboundNumber>.  The default is C<InboundNumber>
+C<InboundNumber>. For details of this see the C<source> parameter in the API
+documentation.  The default is C<InboundNumber>
 
 =item _confirm
 
 What form of confirmation should be sent.  Binary or of the values 2 (for
-Mobile confirmation) and 4 (for Email confirmation).
+Mobile confirmation) and 4 (for Email confirmation). For details of this see
+the C<confirm> parameter in the API documentation. Defaults to 0.
 
 =item _unicode
 
 Whether the message is in Unicode (a C<true> value) or ASCII (a C<false>
-value).  Defaults to C<true>.
+value).  For details of this see the C<unicode> parameter in the API
+documentation. Defaults to C<true>.
 
 =back
 
@@ -118,7 +122,7 @@ sub new {
     my $self = bless {
         _endpoint  => 'https://www.tmcsms.co.uk/api/SendService.aspx',
         _timeout   => 20,
-        _debug   => 0,
+        _debug     => 0,
         _reference => 'Message',
         _source    => 'InboundNumber',
         _confirm   => 0,
